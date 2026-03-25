@@ -75,16 +75,19 @@ def main():
         
         # Display results
         print("\n" + "=" * 60)
-        print("RESULTS")
+        print("LANDING BURN CALCULATOR - RESULTS")
         print("=" * 60)
+        print(f"\nMode:           {mode.upper()}")
         print(f"Status:         {result['status'].upper()}")
-        print(f"Throttle:       {result['throttle']} ({result['throttle_kerbal']}% in Kerbal)")
-        print(f"Burn Time:      {result['burn_time']} seconds")
+        print(f"\nThrottle:       {result['throttle']} ({result['throttle_percent']}%)")
+        print(f"  Kerbal:      {result['throttle_kerbal']} (on 0-15 scale)")
+        print(f"\nBurn Time:      {result['burn_time']} seconds")
         print(f"Final Mass:     {result['m_final']} tons")
         print(f"Average Drag:   {result['average_drag']} N")
         
         if result['warnings']:
-            print("\nWARNINGS:")
+            print("\n" + "-" * 60)
+            print("WARNINGS:")
             for warning in result['warnings']:
                 print(f"\n  {warning}")
         
